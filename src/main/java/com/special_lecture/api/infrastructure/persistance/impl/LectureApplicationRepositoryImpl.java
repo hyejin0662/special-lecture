@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.stereotype.Repository;
 
+import com.special_lecture.api.business.model.entity.Lecture;
 import com.special_lecture.api.business.model.entity.LectureApplication;
 import com.special_lecture.api.business.repo.LectureApplicationRepository;
 import com.special_lecture.api.infrastructure.persistance.orm.LectureApplicationJpaRepository;
@@ -20,22 +21,15 @@ public class LectureApplicationRepositoryImpl implements LectureApplicationRepos
 
     private final LectureApplicationJpaRepository lectureApplicationJpaRepository;
 
-    @Override
-    public Optional<LectureApplication> findByUserIdAndLectureId(Long userId, Long lectureId) {
-        return lectureApplicationJpaRepository.findByUserIdAndLectureId(userId,lectureId);
-    }
+
 
     @Override
-    public int countByLectureId(Long lectureId) {
-        return lectureApplicationJpaRepository.countByLectureId(lectureId);
-    }
-
-    @Override
-    public void saveWithOptimisticLock(LectureApplication application) {
-        try {
+    public void save(LectureApplication application) {
             lectureApplicationJpaRepository.save(application);
-        } catch (OptimisticLockingFailureException e) {
-            throw new LectureException(GlobalResponseCode.LOCKING_FAILURE);
-        }
+    }
+
+    @Override
+    public boolean existByUserIdAndLectureId(String userId, Long lectureId) {
+        return lectureApplicationJpaRepository.existByUserIdAndLectureId(userId,lectureId);
     }
 }

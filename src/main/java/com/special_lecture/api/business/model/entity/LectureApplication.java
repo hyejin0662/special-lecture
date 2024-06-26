@@ -8,7 +8,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Version;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -23,16 +22,18 @@ public class LectureApplication {
     private Long lectureApplicationId;
 
     @Column(nullable = false)
-    private Long userId;
+    private String userId;
 
     @ManyToOne
     @JoinColumn(name = "lecture_id", nullable = false)
     private Lecture lecture;
 
-    @Version
-    private Long version;
+    // public LectureApplication(Long userId, Lecture lecture) {
+    //     this.userId = userId;
+    //     this.lecture = lecture;
+    // }
 
-    public LectureApplication(Long userId, Lecture lecture) {
+    public LectureApplication(String userId, Lecture lecture) {
         this.userId = userId;
         this.lecture = lecture;
     }

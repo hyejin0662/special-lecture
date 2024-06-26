@@ -20,10 +20,7 @@ public class LectureValidator {
     private final LectureJpaRepository lectureJpaRepository;
     private final LectureApplicationJpaRepository lectureApplicationJpaRepository;
 
-    public Lecture validateLectureExists(Long lectureId) {
-        return lectureJpaRepository.findById(lectureId)
-                .orElseThrow(() -> new LectureException(GlobalResponseCode.NOT_FOUND_LECTURE));
-    }
+
 
     public void validateLectureCapacity(Lecture lecture) {
         if (lecture.isFull((int) lectureApplicationJpaRepository.countByLectureId(lecture.getLectureId()))) {
@@ -31,7 +28,7 @@ public class LectureValidator {
         }
     }
 
-    public void validateUserNotAlreadyApplied(Long userId, Long lectureId) {
+    public void validateUserNotAlreadyApplied(String userId, Long lectureId) {
         Optional<LectureApplication> existingApplication = lectureApplicationJpaRepository
                 .findByUserIdAndLectureId(userId, lectureId);
         if (existingApplication.isPresent()) {

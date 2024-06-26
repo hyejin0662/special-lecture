@@ -21,7 +21,6 @@ public class LectureInfo {
     private LectureStatus lectureStatus;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
-    private Long version;
     private int capacity;
 
     public static LectureInfo from(Lecture lecture) {

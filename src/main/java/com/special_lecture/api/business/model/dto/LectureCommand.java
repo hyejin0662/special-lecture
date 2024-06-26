@@ -9,7 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class LectureCommand {
-    private Long userId;
+    private String userId;
     private Long lectureId;
 
     public Lecture toEntity() {

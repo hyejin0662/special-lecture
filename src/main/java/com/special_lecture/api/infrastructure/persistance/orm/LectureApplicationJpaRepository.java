@@ -12,10 +12,10 @@ import com.special_lecture.api.business.model.entity.LectureApplication;
 public interface LectureApplicationJpaRepository extends JpaRepository<LectureApplication, Long> {
 
     @Query("SELECT la FROM LectureApplication la WHERE la.userId = :userId AND la.lecture.lectureId = :lectureId")
-    Optional<LectureApplication> findByUserIdAndLectureId(@Param("userId") Long userId, @Param("lectureId") Long lectureId);
+    Optional<LectureApplication> findByUserIdAndLectureId(@Param("userId") String userId, @Param("lectureId") Long lectureId);
 
     @Query("SELECT COUNT(la) FROM LectureApplication la WHERE la.lecture.lectureId = :lectureId")
     int countByLectureId(@Param("lectureId") Long lectureId);
 
-
+    boolean existByUserIdAndLectureId(String userId, Long lectureId);
 }
