@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 
-// TODO : global responseCode로 변경
+
 @RequiredArgsConstructor
 @Getter
 public enum GlobalResponseCode {

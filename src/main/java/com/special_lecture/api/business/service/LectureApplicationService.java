@@ -1,5 +1,6 @@
 package com.special_lecture.api.business.service;
 
+import com.special_lecture.api.business.model.dto.LectureApplicationCommand;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -24,7 +25,7 @@ public class LectureApplicationService {
     private final LectureApplicationRepository lectureApplicationRepository;
 
     @Transactional
-    public LectureApplicationResponse applyForLecture(LectureCommand command) {
+    public LectureApplicationResponse applyForLecture(LectureApplicationCommand command) {
         Lecture lecture = lectureValidator.validateLectureExists(command.getLectureId());
         lectureValidator.validateLectureCapacity(lecture);
         lectureValidator.validateUserNotAlreadyApplied(command.getUserId(), command.getLectureId());

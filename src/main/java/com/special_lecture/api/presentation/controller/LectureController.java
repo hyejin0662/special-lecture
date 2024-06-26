@@ -1,7 +1,9 @@
 package com.special_lecture.api.presentation.controller;
 
+import com.special_lecture.api.application.facade.LectureFacade;
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,26 +28,24 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class LectureController {
 
-    private final LectureApplicationService lectureApplicationService;
+    private final LectureFacade lectureApplyFacade;
     private final LectureService lectureService;
 
-    @PostMapping("/apply")
-    public WebResponseData<LectureApplicationResponse> applyForLecture(@Valid @RequestBody LectureApplicationRequest request) {
-        // DtoConverter를 사용하여 LectureCommand로 변환
-        LectureCommand command = DtoConverter.convert(request, LectureCommand.class);
-        LectureApplicationResponse response = lectureApplicationService.applyForLecture(command);
-        return WebResponseData.ok(response);
-    }
-
-    @GetMapping("/application/{userId}/{lectureId}")
-    public WebResponseData<LectureApplicationResponse> checkApplicationStatus(@PathVariable Long userId, @PathVariable Long lectureId) {
-        LectureApplicationResponse response = lectureApplicationService.checkApplicationStatus(userId, lectureId);
-        return WebResponseData.ok(response);
-    }
+//    @PostMapping("/apply")
+//    public ResponseEntity<LectureApplicationResponse> applyForLecture(@Valid @RequestBody LectureApplicationRequest request) {
+//        LectureApplicationResponse response = lectureApplyFacade.applyForLecture(request);
+//        return ResponseEntity.ok(response);
+//    }
+//
+//    @GetMapping("/application/{userId}/{lectureId}")
+//    public ResponseEntity<LectureApplicationResponse> checkApplicationStatus(@PathVariable Long userId, @PathVariable Long lectureId) {
+//        LectureApplicationResponse response = lectureApplyFacade.checkApplicationStatus(userId, lectureId);
+//        return ResponseEntity.ok(response);
+//    }
 
     @GetMapping
-    public WebResponseData<List<LectureInfo>> getAllLectures() {
+    public ResponseEntity<WebResponseData<List<LectureInfo>>> getAllLectures() {
         List<LectureInfo> response = lectureService.getAllLectures();
-        return WebResponseData.ok(response);
+        return ResponseEntity.ok(WebResponseData.ok(response));
     }
 }
