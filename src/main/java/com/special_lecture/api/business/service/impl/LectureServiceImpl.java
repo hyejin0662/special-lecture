@@ -1,5 +1,6 @@
-package com.special_lecture.api.business.service;
+package com.special_lecture.api.business.service.impl;
 
+import com.special_lecture.api.business.service.LectureService;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class LectureServiceImpl implements LectureService{
+public class LectureServiceImpl implements LectureService {
 
     private final LectureRepository lectureRepository;
 

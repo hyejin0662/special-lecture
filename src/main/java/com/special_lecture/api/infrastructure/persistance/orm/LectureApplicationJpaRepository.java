@@ -17,5 +17,5 @@ public interface LectureApplicationJpaRepository extends JpaRepository<LectureAp
     @Query("SELECT COUNT(la) FROM LectureApplication la WHERE la.lecture.lectureId = :lectureId")
     int countByLectureId(@Param("lectureId") Long lectureId);
 
-    boolean existByUserIdAndLectureId(String userId, Long lectureId);
+    boolean existsByUserIdAndLectureId(String userId, Long lectureId);
 }

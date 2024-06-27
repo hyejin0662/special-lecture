@@ -2,6 +2,7 @@ package com.special_lecture.api.infrastructure.persistance.impl;
 
 import java.util.List;
 
+import java.util.Optional;
 import org.springframework.stereotype.Repository;
 
 import com.special_lecture.api.business.model.entity.Lecture;
@@ -32,5 +33,10 @@ public class LectureRepositoryImpl implements LectureRepository {
 	public Lecture findByIdWithLock(Long lectureId) {
 		return lectureJpaRepository.findByIdWithLock(lectureId).orElseThrow(() -> new LectureException(GlobalResponseCode.NOT_FOUND_LECTURE));
 	}
+
+//	@Override
+//	public Optional<Lecture> findByIdWithLock(Long lectureId) {
+//		return lectureJpaRepository.findByIdWithLock(lectureId);
+//	}
 
 }

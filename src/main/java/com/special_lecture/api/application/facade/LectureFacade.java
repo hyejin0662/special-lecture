@@ -10,8 +10,8 @@ import com.special_lecture.api.application.dto.response.LectureSearchResponse;
 import com.special_lecture.api.business.model.dto.LectureApplicationApplyInfo;
 import com.special_lecture.api.business.model.dto.LectureApplicationStatusInfo;
 import com.special_lecture.api.business.model.dto.LectureInfo;
-import com.special_lecture.api.business.service.LectureApplicationServiceImpl;
-import com.special_lecture.api.business.service.LectureServiceImpl;
+import com.special_lecture.api.business.service.impl.LectureApplicationServiceImpl;
+import com.special_lecture.api.business.service.impl.LectureServiceImpl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

@@ -8,7 +8,7 @@ public interface LectureApplicationRepository {
 	void save(LectureApplication application);
 
 
-	boolean existByUserIdAndLectureId(String userId, Long lectureId);
+	boolean existsByUserIdAndLectureId(String userId, Long lectureId);
 
 
 }

@@ -29,7 +29,7 @@ public class LectureApplicationRepositoryImpl implements LectureApplicationRepos
     }
 
     @Override
-    public boolean existByUserIdAndLectureId(String userId, Long lectureId) {
-        return lectureApplicationJpaRepository.existByUserIdAndLectureId(userId,lectureId);
+    public boolean existsByUserIdAndLectureId(String userId, Long lectureId) {
+        return lectureApplicationJpaRepository.existsByUserIdAndLectureId(userId,lectureId);
     }
 }

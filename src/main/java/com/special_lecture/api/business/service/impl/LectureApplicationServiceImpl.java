@@ -1,7 +1,8 @@
-package com.special_lecture.api.business.service;
+package com.special_lecture.api.business.service.impl;
 
 import com.special_lecture.api.business.model.dto.LectureApplicationCommand;
 
+import com.special_lecture.api.business.service.LectureApplicationService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class LectureApplicationServiceImpl implements LectureApplicationService{
+public class LectureApplicationServiceImpl implements LectureApplicationService {
 
     private final LectureValidator lectureValidator;
     private final LectureApplicationRepository lectureApplicationRepository;
@@ -43,7 +44,7 @@ public class LectureApplicationServiceImpl implements LectureApplicationService{
     @Override
     @Transactional
     public LectureApplicationStatusInfo checkApplicationStatus(String userId, Long lectureId) {
-        boolean statusResult = lectureApplicationRepository.existByUserIdAndLectureId(userId, lectureId);
+        boolean statusResult = lectureApplicationRepository.existsByUserIdAndLectureId(userId, lectureId);
         return new LectureApplicationStatusInfo(userId,statusResult);
     }
 
