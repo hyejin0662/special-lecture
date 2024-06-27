@@ -55,7 +55,7 @@ public class LectureApplicationServiceImplTest {
   void setUp() {
     command = new LectureApplicationCommand("userId", 1L);
     lecture = new Lecture();
-    lecture.fromLectureId(1L);
+    lecture.updateLectureId(1L);
   }
 
   @Test

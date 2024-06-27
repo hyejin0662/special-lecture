@@ -34,9 +34,5 @@ public class LectureRepositoryImpl implements LectureRepository {
 		return lectureJpaRepository.findByIdWithLock(lectureId).orElseThrow(() -> new LectureException(GlobalResponseCode.NOT_FOUND_LECTURE));
 	}
 
-//	@Override
-//	public Optional<Lecture> findByIdWithLock(Long lectureId) {
-//		return lectureJpaRepository.findByIdWithLock(lectureId);
-//	}
 
 }

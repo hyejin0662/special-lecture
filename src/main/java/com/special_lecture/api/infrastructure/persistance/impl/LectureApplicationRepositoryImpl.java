@@ -1,17 +1,10 @@
 package com.special_lecture.api.infrastructure.persistance.impl;
 
-import java.util.Optional;
-
-import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.stereotype.Repository;
 
-import com.special_lecture.api.business.model.entity.Lecture;
 import com.special_lecture.api.business.model.entity.LectureApplication;
 import com.special_lecture.api.business.repo.LectureApplicationRepository;
 import com.special_lecture.api.infrastructure.persistance.orm.LectureApplicationJpaRepository;
-import com.special_lecture.common.exception.GlobalExceptionHandler;
-import com.special_lecture.common.exception.LectureException;
-import com.special_lecture.common.type.GlobalResponseCode;
 
 import lombok.RequiredArgsConstructor;
 
@@ -30,6 +23,6 @@ public class LectureApplicationRepositoryImpl implements LectureApplicationRepos
 
     @Override
     public boolean existsByUserIdAndLectureId(String userId, Long lectureId) {
-        return lectureApplicationJpaRepository.existsByUserIdAndLectureId(userId,lectureId);
+        return lectureApplicationJpaRepository.existsByUserIdAndLectureLectureId(userId,lectureId);
     }
 }

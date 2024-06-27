@@ -35,7 +35,7 @@ public class LectureServiceImplTest {
     lectures = new ArrayList<>();
     IntStream.rangeClosed(1, 5).forEach(i -> {
       Lecture lecture = new Lecture();
-      lecture.fromLectureId((long) i);
+      lecture.updateLectureId((long) i);
       lectures.add(lecture);
     });
   }

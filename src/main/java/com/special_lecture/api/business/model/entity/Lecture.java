@@ -41,15 +41,15 @@ public class Lecture {
     private LectureStatus lectureStatus;
 
     @Column(nullable = false)
-    private LocalDateTime createAt;
+    private LocalDateTime createdAt;
 
     @Column(nullable = false)
-    private LocalDateTime updateAt;
+    private LocalDateTime updatedAt;
 
     @Column(nullable = false)
     private int capacity = 30;
 
-    public Lecture fromLectureId(Long lectureId) {
+    public Lecture updateLectureId(Long lectureId) {
         this.lectureId = lectureId;
         return this;
     }
