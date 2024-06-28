@@ -71,5 +71,7 @@
     - 특강 테이블, 신청 히스토리 테이블에 대한 구조
     - 적절히 각 도메인에 대한 서비스의 책임이 분리되었는지
 
+**[ ERD ]**
 
+<img width="489" alt="image" src="https://github.com/hyejin0662/special-lecture/assets/110523580/9138c5b2-702a-4ebc-b41c-426229962c4b">
 
