@@ -73,5 +73,6 @@
 
 **[ ERD ]**
 
-<img width="489" alt="image" src="https://github.com/hyejin0662/special-lecture/assets/110523580/9138c5b2-702a-4ebc-b41c-426229962c4b">
+<img width="640" alt="image" src="https://github.com/hyejin0662/special-lecture/assets/110523580/193b50ed-9d72-4357-ace5-5e6963bfd53f">
+
 
