@@ -1,0 +1,16 @@
+package com.special_lecture.api.business.model.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class LectureApplicationStatusInfo {
+
+	private String userId;
+	private boolean success;
+}
